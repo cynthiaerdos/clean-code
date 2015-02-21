@@ -10,6 +10,7 @@ angular.module('myApp.factory', [])
 
         return courseStudents.students;
     })
+
     .factory('courseLessons', function(){
         var courseLessons = {};
         courseLessons.lessons = [
