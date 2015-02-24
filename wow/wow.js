@@ -1,4 +1,3 @@
 angular.module('wow', [
-    'wow.guild',
-    'getGuilds'
+    'wow.guild'
 ]);
