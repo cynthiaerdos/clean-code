@@ -5,11 +5,15 @@
         .module('wow.guild')
         .controller('Guild', guild);
 
-    guild.$inject = ['$http'];
+    guild.$inject = ['$http', 'dataservice'];
 
-    function guild($http){
+    function guild($http, dataservice){
         var vm = this;
+        vm.classRoles = dataservice.classRoles();
 
+        vm.test = function(){
+        console.log(vm.test2);
+        };
         $http.get('guild/guilds.json').
             success(function(data) {
                 vm.guilds = data;

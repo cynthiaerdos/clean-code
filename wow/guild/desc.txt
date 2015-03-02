@@ -1,0 +1,3 @@
+frakcio radiogombos legyen (alli, horda, mind2), guild tipus is kell
+(casual, raider, stb), raidnapok (7 napra), illetve recruit alapjan
+(classok szerint(palanal pl tank-heal-dps-t is meg kell kulonboztetni))
