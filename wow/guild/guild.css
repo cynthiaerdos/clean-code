@@ -15,6 +15,9 @@ div.guildHeader {
     background: linear-gradient(#9a9a9a, #777777); /* Standard syntax (must be last) */
     border: 1px solid #696969;
     border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e1e1e;
 }
 
 div.guildHeaderActive {
@@ -30,6 +33,9 @@ div.guildHeaderActive {
     border: 1px solid #5e5e5e;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e1e1e;
 }
 
 div#guildDetails {
@@ -44,4 +50,5 @@ div#guildDetails {
     border-bottom: 1px solid #696969;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    color: #1e1e1e;
 }

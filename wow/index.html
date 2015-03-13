@@ -259,25 +259,25 @@
         <div id='content' ng-controller="Guild as guild">
             <div id="search-name">
                 <label for="guild-name">Kereses guild nev alapjan:</label>
-                <input type="text" id="guild-name" placeholder="Guild nev" ng-model="guild.search.name">
+                <input type="text" id="guild-name" placeholder="Guild név" ng-model="guild.search.name">
                 <hr/>
             </div>
             <div id="search-faction">
                 Kereses frakcio alapjan:<br/>
                 <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="H" id="horde"><label for="horde">Horda</label><br>
-                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="A" id="alliance"><label for="alliance">Szovetseg</label><br>
-                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="" id="both" checked><label for="both">Mindketto</label><br>
+                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="A" id="alliance"><label for="alliance">Szövetség</label><br>
+                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="" id="both"><label for="both">Mindkettő</label><br>
                 <hr/>
             </div>
             <div id="search-raid-days">
                 Kereses raid napok alapjan:<br/>
-                <input type="checkbox" name="guild-raid-days" id="monday"><label for="monday">Hetfo</label><br>
+                <input type="checkbox" name="guild-raid-days" id="monday"><label for="monday">Hétfő</label><br>
                 <input type="checkbox" name="guild-raid-days" id="tuesday"><label for="tuesday">Kedd</label><br>
                 <input type="checkbox" name="guild-raid-days" id="wednesday"><label for="wednesday">Szerda</label><br>
-                <input type="checkbox" name="guild-raid-days" id="thursday"><label for="thursday">Csutortok</label><br>
-                <input type="checkbox" name="guild-raid-days" id="friday"><label for="friday">Pentek</label><br>
+                <input type="checkbox" name="guild-raid-days" id="thursday"><label for="thursday">Csütörtök</label><br>
+                <input type="checkbox" name="guild-raid-days" id="friday"><label for="friday">Péntek</label><br>
                 <input type="checkbox" name="guild-raid-days" id="saturday"><label for="saturday">Szombat</label><br>
-                <input type="checkbox" name="guild-raid-days" id="sunday"><label for="sunday">Vasarnap</label><br>
+                <input type="checkbox" name="guild-raid-days" id="sunday"><label for="sunday">Vasárnap</label><br>
                 <hr/>
             </div>
             <div id="search-type">
@@ -321,9 +321,9 @@
                 </div>
                 <hr/>
             </div>
-            <div id="guildContainer" ng-repeat="guildDetails in guild.guilds | filter:guild.search">
+            <div id="guildContainer" ng-repeat="guildDetails in guild.guildsFiltered = (guild.guilds | filter:guild.search) | startFrom:guild.currentPage*guild.pageSize | limitTo:guild.pageSize">
                 <div ng-class="{'guildHeaderActive': guildDetails.show, 'guildHeader': !guildDetails.show}" ng-click="guild.toggleGuild(guildDetails)">
-                    Nev: {{guildDetails.name}} | Frakcio: {{guild.whichFaction(guildDetails.faction)}}
+                    {{guildDetails.name}} | {{guild.whichFaction(guildDetails.faction)}}
                 </div>
                 <div id="guildDetails" ng-show="guildDetails.show">
                     <hr>
@@ -331,11 +331,18 @@
                     <hr>
                     Keresett kasztok: <guild-classes class="guildDetails.class"></guild-classes>
                     <hr>
-                    <u>Leiras:</u></i> {{guildDetails.description}}
+                    {{guildDetails.description}}
                 </div>
             </div>
-
-
+            <center>
+                <button ng-disabled="guild.currentPage == 0" ng-click="guild.currentPage=guild.currentPage-1">
+                    Előző
+                </button>
+                {{guild.currentPage+1}}/{{guild.numberOfPages()}}
+                <button ng-disabled="guild.currentPage >= guild.guildsFiltered.length/guild.pageSize - 1" ng-click="guild.currentPage=guild.currentPage+1">
+                    Következő
+                </button>
+            </center>
 
         </div>
         <div id='secondary'>
