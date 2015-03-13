@@ -13,7 +13,6 @@
         vm.whichFaction = whichFaction;
         vm.toggleGuild = toggleGuild;
 
-
         function whichFaction(faction){
             if(faction === "A"){
                 return "Szovetseg";

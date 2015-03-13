@@ -259,13 +259,14 @@
         <div id='content' ng-controller="Guild as guild">
             <div id="search-name">
                 <label for="guild-name">Kereses guild nev alapjan:</label>
-                <input type="text" id="guild-name" placeholder="Guild nev" ng-model="guild.searchName">
+                <input type="text" id="guild-name" placeholder="Guild nev" ng-model="guild.search.name">
                 <hr/>
             </div>
             <div id="search-faction">
                 Kereses frakcio alapjan:<br/>
-                <input type="radio" name="guild-faction" id="horde"><label for="horde">Horda</label><br>
-                <input type="radio" name="guild-faction" id="alliance"><label for="alliance">Szovetseg</label>
+                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="H" id="horde"><label for="horde">Horda</label><br>
+                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="A" id="alliance"><label for="alliance">Szovetseg</label><br>
+                <input type="radio" name="guild-faction" ng-model="guild.search.faction" value="" id="both" checked><label for="both">Mindketto</label><br>
                 <hr/>
             </div>
             <div id="search-raid-days">
@@ -320,7 +321,7 @@
                 </div>
                 <hr/>
             </div>
-            <div id="guildContainer" ng-repeat="guildDetails in guild.guilds">
+            <div id="guildContainer" ng-repeat="guildDetails in guild.guilds | filter:guild.search">
                 <div ng-class="{'guildHeaderActive': guildDetails.show, 'guildHeader': !guildDetails.show}" ng-click="guild.toggleGuild(guildDetails)">
                     Nev: {{guildDetails.name}} | Frakcio: {{guild.whichFaction(guildDetails.faction)}}
                 </div>
