@@ -1,0 +1,47 @@
+div#guildContainer {
+    margin:10px;
+    width:80%;
+}
+
+div.guildHeader {
+    padding:5px;
+    cursor: pointer;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    background: -webkit-linear-gradient(#9a9a9a, #777777); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9a9a9a, #777777); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9a9a9a, #777777); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9a9a9a, #777777); /* Standard syntax (must be last) */
+    border: 1px solid #696969;
+    border-radius: 5px;
+}
+
+div.guildHeaderActive {
+    padding:5px;
+    cursor: pointer;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    background: -webkit-linear-gradient(#8e8e8e, #6a6a6a); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#8e8e8e, #6a6a6a); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#8e8e8e, #6a6a6a); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#8e8e8e, #6a6a6a); /* Standard syntax (must be last) */
+    border: 1px solid #5e5e5e;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#guildDetails {
+    padding:5px;
+    width:100%;
+    background: -webkit-linear-gradient(#8e8e8e, #6a6a6a); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#8e8e8e, #6a6a6a); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#8e8e8e, #6a6a6a); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#8e8e8e, #6a6a6a); /* Standard syntax (must be last) */
+    border-left: 1px solid #696969;
+    border-right: 1px solid #696969;
+    border-bottom: 1px solid #696969;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

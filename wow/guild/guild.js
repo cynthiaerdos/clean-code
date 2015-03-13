@@ -9,11 +9,27 @@
 
     function guild($http, dataservice){
         var vm = this;
+        vm.guilds = [];
+        vm.whichFaction = whichFaction;
+        vm.toggleGuild = toggleGuild;
+
+
+        function whichFaction(faction){
+            if(faction === "A"){
+                return "Szovetseg";
+            }else{
+                return "Horda";
+            }
+        }
+
+        function toggleGuild(guild){
+            vm.guilds[guild.id].show = !(guild.show);
+
+        }
+
         vm.classRoles = dataservice.classRoles();
 
-        vm.test = function(){
-        console.log(vm.test2);
-        };
+
         $http.get('guild/guilds.json').
             success(function(data) {
                 vm.guilds = data;
