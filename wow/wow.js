@@ -1,4 +1,6 @@
 angular.module('wow', [
     'dataservice',
-    'wow.guild'
+    'wow.guild',
+    'ngAnimate',
+    'ng-slide-down'
 ]);

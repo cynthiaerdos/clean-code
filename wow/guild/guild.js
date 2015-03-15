@@ -12,6 +12,7 @@
         vm.guilds = [];
         vm.whichFaction = whichFaction;
         vm.toggleGuild = toggleGuild;
+        vm.plusOrMinus = plusOrMinus;
 
         vm.numberOfPages = numberOfPages;
         vm.currentPage = 0;
@@ -38,6 +39,14 @@
                 return "Szövetség";
             }else{
                 return "Horda";
+            }
+        }
+
+        function plusOrMinus(boolean){
+            if(boolean === false){
+                return "fa fa-plus";
+            }else{
+                return "fa fa-minus";
             }
         }
 
