@@ -17,6 +17,11 @@ div.guildHeader {
     font-size: 18px;
     font-weight: bold;
     color: #1e1e1e;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div.guildHeaderActive {
@@ -33,6 +38,11 @@ div.guildHeaderActive {
     font-size: 18px;
     font-weight: bold;
     color: #1e1e1e;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div#guildDetails {
